@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+
+<ul>
+    <li th:each = "category : ${categories}" >
+        <!--th:value="${category.id}" th:text ="${category.name}">-->
+        <a th:href="'/cheese/category/?id=' +${category.id}" th:text="${category.name}" th:value="${category.name}"></a>
+
+    </li>
+</ul>
+
+    <a href="/category/add">Add Category</a>
+
+</body>
+</html>
